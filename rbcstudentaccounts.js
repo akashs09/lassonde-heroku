@@ -8,6 +8,7 @@ var url2 = 'http://www.rbcroyalbank.com/products/deposits/student-banking-no-lim
 request(url, function(err,resp,body)
 {
     var accountNames = [];
+    var newAccountDebits = [];
     var accountDebits = [];
     
         if (err)
@@ -26,12 +27,14 @@ request(url, function(err,resp,body)
     });        
             
         
-                
+
         
-        
+    for ( i = 0; i < 3; i++){
+    newAccountDebits[i] = accountDebits[i];
+}
         
         console.log(accountNames);
-        console.log(accountDebits);
+        console.log(newAccountDebits);
     }
         
         );
@@ -45,5 +48,9 @@ request(url2, function(err,resp,body)
     monthlyFee0 = "$10.95";
     console.log(monthlyFee0);
 });
+//
+// To DO: need to write this js object to database
+// var rbc = {accountNames[0]: newAccountDebits[0],monthlyFee0};
+
         
      
